@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoGain</title>
+</head>
+
+<body style="font-size: 30px;">
+
+
+    X = 
+    <select id="x">
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option>
+    </select>
+
+    Y = 
+    <select id="y">
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option>
+    </select><br><br>
+
+
+    <button onclick="show()">Information Gain</button>
+
+    <script>
+        // var x = parseInt(prompt("Enter first number, x ="));
+        // var y = parseInt(prompt("Enter first number, y ="));
+        // var sum = x + y;
+
+        function log(base, number) {
+            return Math.log(number) / Math.log(base);
+        }
+
+        function infoGain(x, y, sum) {
+            return -(x / sum) * log(2, x / sum) - (y / sum) * log(2, y / sum);
+        }
+
+        function show() {
+            var x = parseInt(document.getElementById("x").value);
+            var y = parseInt(document.getElementById("y").value);
+            var sum = x + y;
+            document.write("X,Y,Sum = " + x + "," + y + "," + sum + "<br>");
+            document.write("Info gain = " + infoGain(x, y, sum));
+        }
+    </script>
+
+
+</body>
+
+</html>
