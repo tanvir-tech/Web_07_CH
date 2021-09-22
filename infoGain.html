@@ -11,20 +11,20 @@
 <body>
 
     <script>
-        var x = prompt("Enter x =");
-        var y = prompt("Enter y =");
-        var a = prompt("Enter z =");
+        var x = parseInt(prompt("Enter first number, x ="));
+        var y = parseInt(prompt("Enter first number, y ="));
+        var sum = x+y;
 
         function log(base, number) {
             return Math.log(number) / Math.log(base);
         }
 
-        function infoGain(x, y, a) {
-            return -(x / a) * log(2, x / a) - (y / a) * log(2, y / a);
+        function infoGain(x, y, sum) {
+            return -(x / sum) * log(2, x / sum) - (y / sum) * log(2, y / sum);
         }
 
-        document.write("Info gain = "+infoGain(x, y, a));
-        
+		document.write("X,Y,Sum = "+x+","+y+","+sum+"<br>");
+        document.write("Info gain = "+infoGain(x, y, sum));
     </script>
 
 
