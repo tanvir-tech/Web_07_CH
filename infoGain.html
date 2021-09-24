@@ -20,7 +20,7 @@
         }
 
         function infoGain(x, y, sum) {
-            return -(x / sum) * log(10, x / sum) - (y / sum) * log(10, y / sum);
+            return -(x / sum) * log(2, x / sum) - (y / sum) * log(2, y / sum);
         }
 
 		document.write("X,Y,Sum = "+x+","+y+","+sum+"<br>");
